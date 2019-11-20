@@ -1,0 +1,44 @@
+select*from [dbo].[StudentsData];
+
+select*from[dbo].[StudentsData] as s order by s.StudentName;
+insert into StudentsData (StudentName,CourseNumber,SectionNumber) values ('Susan','Java101','H3');
+
+
+
+ALTER TABLE [dbo].[StudentsData]
+ADD CONSTRAINT UC_StudentsNameLimitation
+UNIQUE(StudentName,CourseNumber,SectionNumber);
+
+
+select*from StudentsData order by
+StudentName,CourseNumber,SectionNumber;
+
+
+
+delete top (1)
+from [dbo].[StudentsData]
+where StudentName in ('Susan')
+and SectionNumber in ('H3');
+
+select*from [dbo].[StudentsData];
+
+Warning! The maximum key length is 900 bytes. The index 'UC_StudentsNameLimitation' has maximum length of 1530 bytes. For some combination of large values, the insert/update operation will fail.
+
+Msg 2627, Level 14, State 1, Line 1
+Violation of UNIQUE KEY constraint 'UC_StudentsNameLimitation'. Cannot insert duplicate key in object 'dbo.StudentsData'. The duplicate key value is (Steve, Python, G3).
+The statement has been terminated.
+
+
+ALTER TABLE  StudentsData
+    DROP CONSTRAINT coursesection;
+  
+delete from sys.objects
+where type_desc like 'unit%';
+
+Msg 259, Level 16, State 1, Line 1
+Ad hoc updates to system catalogs are not allowed.
+
+
+ ALTER TABLE StudentsData
+ADD CONSTRAINT UC_StudentsNameLimitation
+UNIQUE(StudentName,CourseNumber,SectionNumber);
