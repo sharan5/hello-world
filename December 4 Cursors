@@ -1,0 +1,190 @@
+select * from ['Whitby Current$']
+where [Sold Price] >1000000
+
+select count([SoldDate]) from ['Whitby Current$']
+where RemarksForClients like '%pool%'
+
+
+
+select count([SoldDate]) from ['Whitby Current$']
+where RemarksForClients not like '%pool%'
+
+
+select count([SoldDate]) from ['Whitby Current$']
+where RemarksForClients not like '%pool%'
+
+	declare @pricewithpool as float;
+	select  @pricewithpool=avg([Sold Price]) from ['Whitby Current$']
+	where RemarksForClients  like '%pool%'
+	print @pricewithpool
+
+	declare @pricewithout as float;
+	select  @pricewithout=avg([Sold Price]) from ['Whitby Current$']
+	where RemarksForClients not  like '%pool%'
+	print @pricewithout
+
+	print  @pricewithpool-@pricewithout
+
+
+	declare @averageSellingPrice as INT;
+declare @sumSeelingPrice as INT;
+declare @soldPrice as INT;
+declare @community as varchar(40);
+declare @type as varchar(12);
+declare @numberofrecords as INT;
+set @numberofrecords = 0;
+declare @dataCursor as cursor
+
+set @datacursor = cursor for   
+	select type, community, SoldPrice from ['Whitby Current$']
+
+
+
+open @datacursor 
+
+	while @@FETCH_STATUS = 0
+
+	begin 
+	print @soldPrice
+	print @type
+	fetch next from @datacursor into @type, @community,@SoldPrice
+
+	end
+
+
+print @numberofrecords
+print @soldPrice
+
+
+
+
+
+DECLARE @averageSellingPrice as INT;
+
+DECLARE @sumSellingPrice as INT;
+
+DECLARE @numberOfRecords as INT;
+
+declare @soldprice as INT;
+
+declare @community as varchar(40);
+
+declare @addresss as varchar(40);
+
+declare @type as varchar(12);
+
+Set @numberOfRecords = 0;
+
+Set @sumSellingPrice = 0;
+
+DECLARE @dataCursor as Cursor;
+
+
+
+SET @dataCursor = CURSOR for
+
+select type, community, soldprice, address
+
+from [dbo].['Whitby Current$'];
+
+
+
+open @dataCursor
+
+while @@Fetch_Status=0
+
+
+
+BEGIN
+
+ set @numberOfRecords = @numberOfRecords + 1
+
+ if @type = 'detached'
+
+--PRINT @soldprice;
+
+--PRINT @type;
+
+--PRINT @addresss;
+
+set  @sumSellingPrice = @sumSellingPrice + @soldprice
+
+fetch next from @dataCursor into @type, @Community, @soldprice, @addresss
+
+
+
+END
+
+print @sumSellingPrice
+
+print @numberOfRecords
+
+print @sumSellingPrice/@numberOfRecords;
+
+
+
+
+DECLARE @averageSellingPricee as INT;
+
+DECLARE @sumSellingPricee as INT;
+
+DECLARE @numberOfRecordss as INT;
+
+declare @soldpricee as INT;
+
+declare @communityy as varchar(40);
+
+declare @addressss as varchar(40);
+
+declare @typee as varchar(12);
+
+Set @numberOfRecordss = 0;
+
+Set @sumSellingPricee = 0;
+
+DECLARE @dataaCursor as Cursor;
+
+
+
+SET @dataaCursor = CURSOR for
+
+select type, community, soldPrice, address
+
+from [dbo].[Lastyear]
+
+
+
+open @dataaCursor
+
+while @@Fetch_Status=0
+
+
+
+BEGIN
+
+ set @numberOfRecordss = @numberOfRecordss + 1
+
+ if @typee = 'detached'
+
+--PRINT @soldpricee;
+
+--PRINT @typee;
+
+--PRINT @addressss;
+
+set  @sumSellingPricee = @sumSellingPricee + @soldpricee
+
+fetch next from @dataaCursor into @typee ,@Communityy, @soldpricee, @addressss
+
+
+
+END
+
+print @sumSellingPricee
+
+print @numberOfRecordss
+
+print @sumSellingPricee/@numberOfRecordss
+
+print @numberofrecords - @numberofrecordss
+
