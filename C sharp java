@@ -1,0 +1,32 @@
+******conditions on bill******
+
+
+
+
+
+            const double lastMonthReading = 39803;
+            const double charges = .095;
+            double currentReading;
+            Console.WriteLine("Current meter reading: ");
+            currentReading = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Meter reading reported on last month bill: " + lastMonthReading);
+            double powerUsed = currentReading - lastMonthReading;
+            Console.WriteLine("Total kWh's used: " + powerUsed);
+            double energyCharge = powerUsed * charges;
+            Console.WriteLine("Total energy charge: " + energyCharge.ToString("C"));
+            double monthlyFees = 10;
+            Console.WriteLine("Standard monthly fees: " + monthlyFees.ToString("C"));
+            double total = energyCharge + monthlyFees;
+            Console.WriteLine("Total Bill: " + total.ToString("C"));
+
+            if(currentReading > 50000 || powerUsed == 1000)
+            {
+                Console.WriteLine("You are going to pay extra cost because your current reading is more than 50,000.");
+            }
+            else
+            {
+                Console.WriteLine("You don't need to pay extra charges.");
+            }
+
+            Console.Read();
+
