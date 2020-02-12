@@ -1,0 +1,80 @@
+/**
+ * 
+ */
+package week6;
+
+/**
+ * @author 758580
+ *
+ */
+public class Loops {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// While------------------
+		boolean bob = true;
+		int age = 1;
+		int number = 0;
+		//Loop Bobs age five times
+		
+		while (bob)//Continue as long as the condition is true
+		{
+			System.out.println("Bob is  " + age + "year old");
+			age++;
+			
+			if (age >= 6)
+				  //bob = false; //ends after this statement is false
+				break; //ends teh loop
+		}
+		
+		System.out.println("--------------------");
+		
+		while (number!=100)//continue as long as the condition is true
+		{
+			System.out.println("The number is  " + number);
+			number++;
+		}
+		
+		//do while-----------------
+		//Run once.
+		//If whileis true then loop
+		//If whileis false then exit
+		boolean today = true;
+		do//Run once
+		{
+			System.out.println("Today is true");
+			System.out.println("Today is true");
+			today = false;
+		}
+		while (today);//Run until false
+		System.out.println("Today is now false");
+		
+		System.out.println("---------------------------");
+		
+		int cars = 1;
+		do//Run once
+		{
+		System.out.println("Cars are "+cars);
+		cars++;
+		}
+		while (cars>=5);//Run until false
+		System.out.println("-----------------------") ;
+		
+	  //Nested for Loop
+		
+	  int ii;
+	  int a;
+	  for (ii = 100; ii < 105; ii++)// Run once for for every 5 times a runs
+	  {
+		System.out.println("Out");
+		for (a = 100; a < 105; a++)
+		{
+			System.out.println("In");
+		}
+	  }
+
+	}
+
+}
