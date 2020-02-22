@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<HTML>
+    <head>
+	    <title>Web Programming2 - Class 6</title>
+		<script  src = "js/jquery-3.4.1.js"></script>
+			   
+		<style>
+		    
+		</style>
+		<script>
+			$(document).ready(function() {
+                alert("Jquery is working");
+            });				
+		</script>
+	</head>
+	<body>
+	    <h1 class="color"> Web Programming2 - Class 6</h1>
+		
+        <footer>
+            
+		</footer>	
+	</body>
+</HTML>
