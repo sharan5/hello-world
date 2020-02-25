@@ -1,0 +1,115 @@
+using System;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+                int count = 5;
+                String x = "*";
+                while (count>=0)
+                {
+                    int a,b;
+                    for (a=5; a>=count; a--)
+                    {
+                        Console.Write("");
+                    }
+                    for (b = 1; b <= (count); b++)
+                    {
+                        Console.Write("{0}", x + "");
+                    }
+                    Console.WriteLine("");
+                    count--;
+                }
+
+            }
+        }
+    }
+
+
+
+using System;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+                int count = 1;
+
+                String x = "*";
+                while (count<=5)
+                {
+                    int c;
+                    for (c=1; c<=count; c++)
+                    {
+                        Console.Write(x);
+                    }
+                    Console.Write("\n");
+                    count++;
+                }
+
+            }
+        }
+    }
+
+
+
+using System;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+            int a, number, Term1 = 0, Term2 = 1, nextTerm;
+            Console.WriteLine("Enter the number of terms: ");
+            number = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Fibonacci Series: ");
+            for (a = 1; a <= number; ++a)
+            {
+                if (a == number)
+                    Console.Write($"{Term1}");
+                else
+                    Console.Write($"{Term1}, ");
+                nextTerm = Term1 + Term2;
+                Term1 = Term2;
+                Term2 = nextTerm;
+            }
+            Console.ReadLine();
+
+        }
+    }
+}
+
+using System;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+
+
+            char alphabts;
+            for (alphabts = 'a'; alphabts <= 'z'; alphabts++)
+            {
+                Console.Write(" " + alphabts);
+            }
+
+
+
+
+        }
+    }
+}
+
