@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web Programming 2 - Class 7 </title>
+        <script src = "Js\jquery-3.4.1.js"></script>
+		<script src = "Js\jquery-ui.js"></script>
+		<link rel="stylesheet" type="text/css" href="Css\jquery-ui.css">
+      
+		 <script>
+			$(document).ready(function() {
+			$( "#Myprofile" ).accordion({
+			heightStyle: "content",
+			 collapsible: true,
+			 active: 0
+			  });
+			  
+			 $( "#tabs" ).tabs({
+			  event: "mouseover",
+			  collapsible: true,
+			  
+			   });
+			   
+			   
+			    $( "#datepicker" ).datepicker();	
+			    $( "#dialog" ).dialog();
+				$( "#dialog1" ).hide();
+                $( "#dialog2" ).hide();
+			 
+				$( "#opener" ).on( "click", function() {
+				 $( "#dialog1" ).dialog({ buttons: {
+					"Load More": function() {
+					$( "#dialog2" ).dialog(); 
+					},
+					Cancel: function() {
+					  $( this ).dialog( "close" );
+					}
+				  }
+                });
+				});
+               	});
+        </script>
+		
+    </head>
+    <body>
+
+        <h1>Web Programming 2 - Class 7 </h1>
+		<div id="Myprofile">
+			  <h3>Item 1</h3>
+			  <div id="tabs">
+			  <ul>
+				<li><a href="#tabs-1">Click</a></li>
+				<li><a href="#tabs-2">Datepicker</a></li>
+				<li><a href="#tabs-3">Form</a></li>
+				 </ul>
+			  <div id="tabs-1">
+				<div id="dialog1" title="Basic dialog">
+				  <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+				</div>
+				
+				<div id="dialog2" title="Basic dialog">
+				  <p>This is an animated dialog which is useful for displaying information</p>
+				</div>
+				
+				<button id="opener">Open Dialog</button>
+			</div>
+			  <div id="tabs-2">
+				<p>Date:<input type="text" id="datepicker
+				"></p>
+				</div>
+				</div>
+			  
+			  
+			  <h3>Item 2</h3>
+			  <div>
+				<p>My phone number is 4372426010.</p>
+			  </div>
+			  
+			  <h3>Item 3</h3>
+			  <div>
+				<p>My email id is SHARANSEKHA2001@GMAIL.COM.</p>
+			  </div>
+			  
+			  <h3>Item 4</h3>
+			  <div>
+				<p>67 manitou crescent, brampton</p>
+			  </div>
+		
+ 
+	</div>
+
+	</body>
+	</html>
